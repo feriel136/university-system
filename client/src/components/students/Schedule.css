@@ -1,0 +1,86 @@
+.schedule-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fa;
+  min-height: 100vh;
+}
+
+.schedule-container h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(6, 1fr); /* Heure + 6 jours */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.schedule-header {
+  display: contents;
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
+
+.time-column,
+.day-header {
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.day-header:last-child {
+  border-right: none;
+}
+
+.time-slot {
+  padding: 10px;
+  text-align: center;
+  background-color: #e0e7ff;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+}
+
+.schedule-cell {
+  padding: 10px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-cell:last-child {
+  border-right: none;
+}
+
+.course-card {
+  background-color: #cfe2ff;
+  border-left: 5px solid #1a73e8;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.course-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1a237e;
+}
+
+.course-card p {
+  margin: 4px 0 0 0;
+}

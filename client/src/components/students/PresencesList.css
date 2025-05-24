@@ -1,0 +1,86 @@
+/* PresencesList.css */
+
+.presences-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.presences-container h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.loading-message, .empty-message {
+  text-align: center;
+  color: #7f8c8d;
+  margin-top: 30px;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.presences-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.presences-table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+.presences-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.presences-table tbody tr {
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.2s;
+}
+
+.presences-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.presences-table tbody tr:hover {
+  background-color: #f1f8fe;
+}
+
+.presences-table td {
+  padding: 12px 15px;
+  color: #34495e;
+}
+
+.status-present {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.status-absent {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .presences-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .presences-container {
+    padding: 10px;
+  }
+}

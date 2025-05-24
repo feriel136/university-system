@@ -1,0 +1,98 @@
+/* StudentList.css */
+.student-list-container {
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.student-list-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.student-list-container h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 24px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.error-message {
+  color: var(--danger);
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(249, 65, 68, 0.1);
+  border-radius: var(--radius);
+  border: 1px solid rgba(249, 65, 68, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: var(--primary);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:nth-child(even) {
+  background-color: #f9fafc;
+}
+
+tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .student-list-container {
+    padding: 1.5rem;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-list-container {
+    padding: 1rem;
+  }
+  
+  .student-list-container h2 {
+    font-size: 1.25rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}

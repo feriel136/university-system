@@ -1,0 +1,141 @@
+/* Events.css */
+.events-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.events-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.events-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 24px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.events-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: #f9fafc;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+}
+
+.events-input,
+.events-textarea,
+.events-button {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.events-input:focus,
+.events-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.events-textarea {
+  grid-column: span 2;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.events-button {
+  grid-column: span 2;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.events-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.events-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.events-item {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary-light);
+  transition: var(--transition);
+}
+
+.events-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.events-item-title {
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.events-item-date {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.events-item-location {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.events-item-description {
+  margin-top: 0.75rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .events-form {
+    grid-template-columns: 1fr;
+  }
+
+  .events-textarea,
+  .events-button {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-container {
+    padding: 1.5rem;
+  }
+
+  .events-title {
+    font-size: 1.25rem;
+  }
+}

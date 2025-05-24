@@ -1,0 +1,36 @@
+/* DownloadButton.css */
+
+.download-btn {
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-btn:hover {
+  background-color: #3a0ca3;
+}
+
+.download-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef233c;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Icône (optionnelle) */
+.download-btn::before {
+  content: "↓";
+  font-size: 18px;
+}

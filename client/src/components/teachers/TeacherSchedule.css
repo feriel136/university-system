@@ -1,0 +1,330 @@
+/* TeacherSchedule.css - Version complète et améliorée */
+
+/* Variables CSS pour une maintenance facile */
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #f39c12;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --text-color: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset et styles de base */
+.schedule-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.schedule-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Navigation entre semaines */
+.week-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.week-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+}
+
+.week-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.week-dates {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.nav-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.nav-button:focus {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* Conteneur des jours */
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Carte de jour */
+.day-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.day-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Liste des séances */
+.seances-list {
+  padding: 0.5rem;
+}
+
+.seance-card {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  background: white;
+  border-left: 4px solid var(--primary-color);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.seance-card:hover {
+  background: #f8fafc;
+  transform: translateX(5px);
+}
+
+.seance-card.cancelled {
+  opacity: 0.7;
+  border-left-color: var(--error-color);
+}
+
+.cancelled-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--error-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-bottom-left-radius: 8px;
+}
+
+/* Détails des séances */
+.seance-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.seance-icon {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.seance-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.seance-subject {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.seance-type {
+  margin-left: auto;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.seance-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.seance-room, .seance-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* États de chargement et d'erreur */
+.loading-state, .error-state, .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  font-size: 2rem;
+  color: var(--error-color);
+  margin-bottom: 1rem;
+}
+
+.empty-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.retry-button:hover {
+  background: var(--primary-dark);
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-container {
+    padding: 1rem;
+  }
+  
+  .schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .week-navigation {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .days-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #f0f0f0;
+    --text-light: #b0b0b0;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --border-color: #444;
+  }
+  
+  .seance-card {
+    background: #333;
+  }
+  
+  .seance-card:hover {
+    background: #3a3a3a;
+  }
+}
